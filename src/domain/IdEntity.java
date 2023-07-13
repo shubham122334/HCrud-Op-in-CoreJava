@@ -1,6 +1,6 @@
 package domain;
 
-public class St {
+public class IdEntity {
 
     private Long id;
 

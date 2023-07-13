@@ -1,11 +1,11 @@
 package domain;
 
-public class P extends St{
+public class Employee extends IdEntity{
 
     private String firstName;
     private String lastName;
 
-    public P(){}
+    public Employee(){}
     public String getFirstName() {
         return firstName;
     }

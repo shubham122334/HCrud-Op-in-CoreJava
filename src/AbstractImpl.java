@@ -1,13 +1,13 @@
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-import domain.St;
+import domain.IdEntity;
 
-public abstract class AbstractImpl <T extends St,ID>{
+public abstract class AbstractImpl <T extends IdEntity,ID>{
 
     private Map<Long ,T> map=new HashMap<>();
     T save(T object){
@@ -41,7 +41,20 @@ public abstract class AbstractImpl <T extends St,ID>{
 	Set<T> findAll() {
 		// TODO Auto-generated method stub
 		
-		return new HashSet<>(map.values());
+		return new LinkedHashSet<>(map.values());
+	}
+
+	void delete(T object) {
+		
+		map.entrySet().removeIf(entry->entry.getValue().equals(object));
+	}
+
+
+	 void deleteById(Long id) {
+		 
+		 map.remove(id);
+		
+		
 	}
 
 }
