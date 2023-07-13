@@ -50,7 +50,7 @@ public class AutoIdGeneration {
     h.personService.save(employee4);
 
     
-    // finding  person by Id
+    // finding  Employee by Id
     Employee em=h.personService.findById(3L); 
 	System.out.println("Emplyee found = "+em);
 	
